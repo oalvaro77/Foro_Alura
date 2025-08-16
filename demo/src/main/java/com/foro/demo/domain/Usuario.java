@@ -20,6 +20,9 @@ public class Usuario {
     @Column(name = "creado_en", updatable = false, insertable = false)
     private Instant creadoEn;
 
+    @Column(nullable=false, length=30)
+    private String rol = "USER";   // <-- NUEVO
+
     // getters/setters
 
     public Long getId() {
@@ -61,4 +64,7 @@ public class Usuario {
     public void setCreadoEn(Instant creadoEn) {
         this.creadoEn = creadoEn;
     }
+
+    public String getRol() { return rol; }          // <-- getter requerido
+    public void setRol(String rol) { this.rol = rol; } // <-- setter
 }
